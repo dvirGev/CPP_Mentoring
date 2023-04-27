@@ -24,7 +24,7 @@ public:
     {
         cout << "b" << endl;
     }
-    virtual string get()
+    string get()
     {
         return "hello";
     }
@@ -42,13 +42,36 @@ public:
     }
     // ~b();
 };
+class Animal
+{
+private:
+    /* data */
+public:
+    virtual string getName() = 0;
+    virtual int numberOfLegs() = 0;
+};
+class Dog:Animal
+{
+private:
+    /* data */
+public:
+   virtual string getName()
+   {
+        return "Dog";
+   }
+    virtual int numberOfLegs()
+    {
+        return 4;
+    }
+};
+
 
 int main(int argc, char const *argv[])
 {
     c obj;
     obj.getName();
-    a &p = (a&)obj;
-    p.getName();
+    b &r = (b&)obj;
+    r.getName();
     return 0;
 }
 
