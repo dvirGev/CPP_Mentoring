@@ -42,35 +42,12 @@ public:
     }
     // ~b();
 };
-class Animal
-{
-private:
-    /* data */
-public:
-    virtual string getName() = 0;
-    virtual int numberOfLegs() = 0;
-};
-class Dog:Animal
-{
-private:
-    /* data */
-public:
-   virtual string getName()
-   {
-        return "Dog";
-   }
-    virtual int numberOfLegs()
-    {
-        return 4;
-    }
-};
-
 
 int main(int argc, char const *argv[])
 {
-    c obj;
+    b obj;
     obj.getName();
-    b &r = (b&)obj;
+    a &r = (a&)obj;
     r.getName();
     return 0;
 }

@@ -1,0 +1,10 @@
+#!/bin/bash
+# reading the first line from the STANDARD INPUT
+indx=$2 #number of field to sum in line
+(( sum = $1 )) # The initial sum is our first PARAMETER!
+while read line; do # read returns error on EOF
+line_split=($line)
+echo $line
+(( sum += ${line_split[indx]} +0 )) #+0 helps when line is empty
+done
+echo "Total balance: $sum"

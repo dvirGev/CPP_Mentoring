@@ -1,0 +1,12 @@
+#!/bin/bash
+name=$1
+sum=0
+while read -ra line 
+do
+    # line_split=($line)
+    if [[ $name == "${line[0]} ${line[1]}" ]]; then
+        (( sum+= ${line[2]} ))
+    fi
+    # echo ${line_split[2]}
+done < "bank"
+echo "${name} has $sum$"

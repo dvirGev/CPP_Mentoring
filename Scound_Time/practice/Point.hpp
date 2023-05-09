@@ -22,7 +22,7 @@ public:
     Point operator*(const double a)
     {
         return Point(this->x*a, this->y*a);
-    }
+    } // Point * double
     Point &operator*=(const double a)
     {
         this->x *= a;
