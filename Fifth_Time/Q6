@@ -1,0 +1,7 @@
+echo b* > bfile.txt
+
+i=1
+while [ $i -lt 101 ]; do
+    touch file$i.txt
+    ((i++))
+done

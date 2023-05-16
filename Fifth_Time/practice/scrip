@@ -1,0 +1,61 @@
+#! /bin/bash
+x=( a b c d)
+x[4]=e
+echo ${x[@]}
+
+echo *.txt
+echo b*
+echo [bf]*
+echo [a-c,f]*
+echo ??.txt
+
+cd ~/Downloads
+ls
+cd ~/Desktop/CPP_Mentoring/Fifth_Time/practice
+
+if [ 1 -gt 2 ]; then
+    echo "1 > 2"
+elif [ 3 -lt 1 ]; then
+    echo "3 < 1"
+else
+    echo "1 is the smallest number"
+fi
+
+i=0
+while [ $i -lt 5 ]; do
+    echo $i
+    ((i++))
+done
+
+for l in ${x[@]}; do
+    echo $l
+done
+
+for w in hello word; do
+    echo $w
+done
+
+exp=5+3
+(( val=5+3 ))
+echo $exp=$val
+
+printHello() {
+    echo $hello
+}
+
+###
+hello="hello world"
+printHello
+
+foo() {
+    if (( $# == 0 )); then
+        echo we need to get argument
+    else
+        for w in $@; do
+            echo $w
+        done
+        echo $@
+    fi
+}
+foo
+foo hello word
