@@ -4,10 +4,10 @@ using namespace std;
 class a
 {
 private:
-    
+
 public:
     // a();
-    virtual void getName()
+    void getName()
     {
         cout << "a" << endl;
     }
@@ -47,8 +47,8 @@ int main(int argc, char const *argv[])
 {
     b obj;
     obj.getName();
-    a &r = (a&)obj;
-    r.getName();
+    a *r = (a*)&obj;
+    r->getName();
     return 0;
 }
 
